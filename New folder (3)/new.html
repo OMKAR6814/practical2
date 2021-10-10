@@ -1,0 +1,49 @@
+<div class="container-1">
+    <label for="place"  style="color: rgb(255, 255, 255);">Select your city and place to visit</label><br>
+    <select id="city" name="city" type="text" onchange="ChangecityList()" required> 
+        <option value="">-- City --</option> 
+        <option value="BENGALURU">BENGALURU</option> 
+        <option value="GOA">GOA</option> 
+        <option value="KOLKATA">KOLKATA</option>
+        <option value="MAHABALESHWAR">MAHABALESHWAR</option>
+        <option value="KOKAN">KOKAN</option>
+        <option value="RAJASTHAN">RAJASTHAN</option>
+        <option value="KERALA">KERALA</option>
+        <option value="TAMIL-NADU">TAMIL NADU</option>
+        
+      </select> 
+    
+      
+      <select id="place" name="place" type="text" required>
+        <option value="">-- Place --</option>
+      </select> 
+      
+      <script>
+      var places = {};
+      items['BENGALURU'] = new Array('LALBAGH', 'BANNERGHATTA NATIONAL PARK', 'BANGLORE PALACE','CUBBON PARK','INNOVATIVE FILM CITY','COMMERCIAL STREET','ISKCON TEMPLE','WONDERLA AMUSEMENT PARK','MG ROAD','UB CITY MALL');
+      items['GOA'] = new Array('CALANGUTE BEACH', 'FORT AGUADA', 'CRUISE IN GOA', 'DUDHSAGAR FALLS','ANJUNA BEACH','CHAPORA FORT','THALASSA','BASILICA OF BOM JESUS','BAGA BEACH','BUTTERFLY BEACH');
+      items['KOLKATA'] = new Array('VICTORIA MEMORIAL KOLKATA', 'FORT WILLIAM', 'BELUR MATH','HOWRAH BRIDGE','BIRLA PLANETARIUM','INDIAN MUSEUM','MARBLE PALACE MANSION','MOTHER HOUSE','SCIENCE CITY KOLKATA','ST.PAULS CATHEDRAL KOLKATA');
+      items['MAHABALESHWAR'] = new Array('ELEPHANTS HEAD POINT', 'CHINAMANS FALLS', 'DHOBI WATERFALL','ARTHURS SEAT','VENNA LAKE','WILSON POINT','MAHABALESHWAR TEMPLE','PANCHGANI','TAPOLA','PRATAPGAD FORT');
+      items['KOKAN'] = new Array('GANPATIPULE', 'ALIBAG', 'RATNAGIRI', 'TARKARLI','SINDHUDURG','DAPOLI','MURUD','HARNAI','MAHAD','ROHA');
+      items['RAJASTHAN'] = new Array('JAIPUR', 'UDAIPUR', 'MOUNT ABU','JAISALMER','JODHPUR','AJMER','RANTHAMBORE','BIKANER','PUSHKAR','BHARATPUR');
+      items['KERALA'] = new Array('MUNNAR', 'ALLEPPEY', 'KOCHI','PERIYAR NATIONAL PARK','VARKALA','KOVALAM','WAYANAD','POOVAR','SABARIMALA');
+      items['TAMIL-NADU'] = new Array('RAMESHWARAM', 'YERCAUD', 'KODAIKANAL', 'OOTY','CHENNAI','HOGENAKKAL','MAHABALIPURAM','KANYAKUMARI','KANCHIPURAM','MADURAI');
+      
+      function ChangecityList() {
+          var carList = document.getElementById("city");
+          var modelList = document.getElementById("place");
+          var selCar = carList.options[carList.selectedIndex].value;
+          while (modelList.options.length) {
+              modelList.remove(0);
+          }
+          var cars = place[selCar];
+          if (cars) {
+              var i;
+              for (i = 0; i < cars.length; i++) {
+                  var car = new Option(cars[i], i);
+                  modelList.options.add(car);
+              }
+          }
+      } 
+      </script>
+    </div>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<head>
+    <title>Exp3</title>
+    
+    <style>
+        .container
+        {
+           text-align: center;
+           border: 2px solid;
+           width: 1200px;
+           height: 80px;
+           margin: auto;
+        }
+        .container-1
+        {
+            text-align: center;
+            width: 1200px;
+            height: 70px;
+            border: 2px solid;
+            margin: auto;
+        }
+        
+        .container-2
+        {
+            
+            display: flex;
+            height: 400px;
+            width: 1200px;
+            margin: auto;
+            border: 2px solid;
+        }
+   
+        .container-3
+        {
+            text-align: center;
+            border: 2px solid;
+            height: 400px;
+            width: 600px;   
+            margin: auto;
+        }
+    
+        .container-4
+        {
+            width: 1200px;
+            height: 50px;
+            border: 2px solid;
+            margin: auto;
+            text-align: center;
+        }
+        @media all and (max-width: 1024px)
+        {
+            .container-2
+        {
+            
+            display: grid;
+            height: auto;
+            width: 1200px;
+            margin: auto;
+            border: 2px solid;
+        }
+   
+        .container-3
+        {
+            text-align: center;
+            border: 2px solid;
+            height: 400px;
+            width: 1200px;   
+            margin: auto;
+        }
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <header class="container">
+        <h1>Header</h1>
+    </header>
+    <nav class="container-1">
+        <h1>Navigation bar</h1>
+    </nav>
+    
+
+    <div class="container-2">
+        <div class="container-3">
+            <header>
+                <h1>Article 1</h1>
+            </header>
+            <p>Headingley Test: Pujara, Rohit and Kohli lead India fightback after England take 354-run lead on Day 3.
+            </p>
+        </div>
+        <div class="container-3">
+            <header>
+                <h1>Article 2</h1>
+            </header>
+            <p>Chess: Indian Grandmaster Sethuraman wins Barcelona Open, K Murali takes 3rd spot.
+            </p>
+        </div>
+    </div>
+    
+    <footer class="container-4">
+        <p>Copyright 2021 Omkar</p>
+    </footer>
+</body>
+</html>

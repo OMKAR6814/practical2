@@ -1,0 +1,104 @@
+.container-1
+{
+    width: 100%;
+    height: auto;
+    background-color: yellow;
+    color: rgb(221, 0, 0);
+    padding-left: 40px;
+}
+.wrapper
+{
+    padding: 15px;
+}
+/*company image and contact code*/
+.image
+{
+    width: 380px;
+    height: auto;
+}
+.col-sm
+{
+    text-align: center;
+    height: 80px;
+    padding: 10px;
+    width: 400px;
+    color: red;
+}
+/*nevigation bar code*/
+.nav-item
+{
+    font-weight: bold;
+    color: black;
+}
+/*hero image code*/
+.hero-image 
+{
+background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+url("heroimg.jpg");
+  
+height: 1000px;
+width: auto;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+position: relative;
+}
+.hero-heading 
+{
+font-size: 100px;
+font-weight: 900;
+}
+
+
+/*coursel code*/
+.carousel-inner
+{
+padding-top: 20px;
+padding-bottom: 20px;
+}
+
+/*about section code*/
+.about-text 
+{
+    text-align: center;
+    padding-bottom: 15px;
+    color: rgb(92, 89, 89);
+}
+.about-text-item 
+{
+    padding-bottom: 35px;
+    padding-top: 35px;
+}
+.title-about-us 
+{
+    font-size: 16px;
+    color: #222;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+.fa 
+{
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.fa-angle-double-right:before
+{
+    content: "\f101";
+}
+.carousel-item
+{
+    height: 450px;
+    padding: 10px;
+}
+.container-2
+{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}

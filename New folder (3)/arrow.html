@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<title></title>
+</head>
+<script type="text/javascript">
+var categories = new Array("BENGALURU", "GOA", "KOLKATA", "MAHABALESHWAR", "KOKAN","RAJASTHAN","KERALA","TAMIL NADU" );
+var items = new Array();
+      items['BENGALURU'] = new Array('LALBAGH', 'BANNERGHATTA NATIONAL PARK', 'BANGLORE PALACE','CUBBON PARK','INNOVATIVE FILM CITY','COMMERCIAL STREET','ISKCON TEMPLE','WONDERLA AMUSEMENT PARK','MG ROAD','UB CITY MALL');
+      items['GOA'] = new Array('CALANGUTE BEACH', 'FORT AGUADA', 'CRUISE IN GOA', 'DUDHSAGAR FALLS','ANJUNA BEACH','CHAPORA FORT','THALASSA','BASILICA OF BOM JESUS','BAGA BEACH','BUTTERFLY BEACH');
+      items['KOLKATA'] = new Array('VICTORIA MEMORIAL KOLKATA', 'FORT WILLIAM', 'BELUR MATH','HOWRAH BRIDGE','BIRLA PLANETARIUM','INDIAN MUSEUM','MARBLE PALACE MANSION','MOTHER HOUSE','SCIENCE CITY KOLKATA','ST.PAULS CATHEDRAL KOLKATA');
+      items['MAHABALESHWAR'] = new Array('ELEPHANTS HEAD POINT', 'CHINAMANS FALLS', 'DHOBI WATERFALL','ARTHURS SEAT','VENNA LAKE','WILSON POINT','MAHABALESHWAR TEMPLE','PANCHGANI','TAPOLA','PRATAPGAD FORT');
+      items['KOKAN'] = new Array('GANPATIPULE', 'ALIBAG', 'RATNAGIRI', 'TARKARLI','SINDHUDURG','DAPOLI','MURUD','HARNAI','MAHAD','ROHA');
+      items['RAJASTHAN'] = new Array('JAIPUR', 'UDAIPUR', 'MOUNT ABU','JAISALMER','JODHPUR','AJMER','RANTHAMBORE','BIKANER','PUSHKAR','BHARATPUR');
+      items['KERALA'] = new Array('MUNNAR', 'ALLEPPEY', 'KOCHI','PERIYAR NATIONAL PARK','VARKALA','KOVALAM','WAYANAD','POOVAR','SABARIMALA');
+      items['TAMIL NADU'] = new Array('RAMESHWARAM', 'YERCAUD', 'KODAIKANAL', 'OOTY','CHENNAI','HOGENAKKAL','MAHABALIPURAM','KANYAKUMARI','KANCHIPURAM','MADURAI');
+    
+
+
+function resetForm(theForm) {
+  /* reset categories */
+  theForm.categories.options[0] = new Option("Please select a City", "");
+  for (var i=0; i<categories.length; i++) {
+    theForm.categories.options[i+1] = new Option(categories[i], categories[i]);
+  }
+  theForm.categories.options[0].selected = true;
+  /* reset items */
+  theForm.items.options[0] = new Option("Please select a Place", "");
+  theForm.items.options[0].selected = true;
+}
+
+function updateModels(theForm) {
+  var make = theForm.categories.options[theForm.categories.options.selectedIndex].value;
+  var newModels = items[make];
+  theForm.items.options.length = 0;
+  theForm.items.options[0] = new Option("Please select a Place", "");
+  for (var i=0; i<newModels.length; i++) {
+    theForm.items.options[i+1] = new Option(newModels[i], newModels[i]);
+  }
+  theForm.items.options[0].selected = true;
+}
+
+</script>
+<body>
+
+<form name="autoSelectForm" action="" method="post">
+<select size="1" name="categories" onchange="updateModels(this.form)">
+</select>
+<select size="1" name="items" onclick = "">
+</select>
+<input type="submit">
+</form>
+<script type="text/javascript">
+  resetForm(document.autoSelectForm);
+</script>
+
+</body>
+</html>

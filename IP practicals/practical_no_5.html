@@ -1,0 +1,33 @@
+<script>
+    class Myinfo {
+    constructor(name, Rollno, PrnNo) {
+        this.sname = name;
+        this.sRollno = Rollno;
+        this.sPrnNo = PrnNo;
+    }}
+    class Account extends Myinfo {
+    constructor(name, Rollno, PrnNo, email, password) {
+        super(name, Rollno, PrnNo);
+        this.sEmail = email;
+        this.spass = password;
+    }
+    criteria() {
+        if ((this.spass = 512)) {
+            console.log(
+                ` Name :- ${this.sname} 
+                 Roll No :- ${this.sRollno} 
+                 Prn No :- ${this.sPrnNo}
+                 Congratulations, Your account has been Created Successfully and  Your email is ${this.sEmail}`
+            );
+        } else {
+            console.log(`Failed`);
+        }}}
+    let stu = new Account(
+        "Omkar Yadav",
+        14,
+        191051004,
+        "odyadav@acpce.ac.in",
+        512
+        );
+stu.criteria();
+</script>

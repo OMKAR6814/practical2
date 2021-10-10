@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Reservation
+        </title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+        <style>
+
+            .container-2{
+
+                padding: 20px;
+                width: 40%;
+                border-radius: 10px;
+                
+            }
+            .form-group{
+                margin-top: 20px;
+                margin-bottom: 20px;
+                color: rgb(255, 255, 255);
+                
+            }
+            .container-1{
+                margin-top: 20px;
+                
+
+                
+            }
+            .container-3{
+                background-image: url("https://images.unsplash.com/photo-1503220317375-aaad61436b1b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80");
+                
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: relative;
+                width: 100%;
+                height: auto;
+                
+            }
+            .formerror {
+            color: red;
+            }
+
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="../../">Trip-Tourism</a>
+            <div id="city-name"></div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav d-flex justify-content-end w-100">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="../../">Home </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+   
+    <div class="container-3">
+        <div class="container-2">
+            <h1><strong>RESERVE YOUR ADVENTURE 
+                HERE..</strong> </h1>
+            <p><strong>Fill this given form.</strong></p>
+            <form>
+                <div class="form-group">
+                    <label for="Name">Name</label>
+                    <input type="text" name="name" class="form-control" id="name" placeholder="Enter Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="Number">Number</label>
+                    <input type="text" class="form-control" name="number" id="number" placeholder="Enter Number" required>
+                    </div>
+                <div class="form-group">
+                  <label for="Email">Email address</label>
+                  <input type="email" class="form-control" name="email" id="email"  placeholder="Enter email" required>
+                </div>
+
+            <div class="container-1">
+                <label for="adventure" style="color: rgb(255, 255, 255);">Select your city and adventure</label><br>
+                <select id="city" onchange="ChangecityList()"> 
+                    <option value="">-- City --</option> 
+                    <option value="BENGALURU">BENGALURU</option> 
+                    <option value="GOA">GOA</option> 
+                    <option value="KOLKATA">KOLKATA</option>
+                    <option value="SINGAPORE">SINGAPORE</option>
+                    <option value="MALAYSIA">MALAYSIA</option>
+                    <option value="BANGKOK">BANGKOK</option>
+                    <option value="NEW-YORK">NEW YORK</option>
+                    <option value="PARIS">PARIS</option>
+                    
+                  </select> 
+                  
+                  <select id="adventure"></select> 
+                  
+                  <script>
+                  var adventures = {};
+                  adventure['BENGALURU'] = ['NIABOYTOWN', 'FORT-SIONNNN', 'WOODDAUX','BAGEORGE-WITH-NONSHI-HARBOUR','STONELUMHAWK','LA-ANRNCAST','FORT-SHILBLUFF','SHIWOOD','EAST-VYFOLK'];
+                  adventure['GOA'] = ['PERTHBY', 'NESBRIDGE', 'KENNTIC-END', 'PRESSAL-CREEK','HEATHBER','ST-PLYMPSIDE','LOWTRA','CHETTBOU-AUX-DERSTING','BUCKTIM','NTIBRAN-LAKE','WARFLIN'];
+                  adventure['KOLKATA'] = ['THTON', 'GRAND-RUBOU-DU-WAGTEN', 'NESBRIDGE','NORTH-GELGOON','LA-LAKECHI-WITH-LIPENTAGE','ANNVIR-IN-INGSAUK-LAKE'];
+                  adventure['SINGAPORE'] = ['VANGREATSHOT', 'PORT-HILLSLFLEET', 'NEW-SPRIHA','GRAND-ASHLAND','WEST-DGETHALL','GRAND-PRESBIR','GERJUAQPOOL','GRAND-DINYARDLODGE'];
+                  adventure['MALAYSIA'] = ['ST-GOSMYDRO', 'SANBOOLBURGH', 'STERDALLESANNES-END', 'WOOTKENTREE','SONKINS-SANDS','LIA','NORTH-LDEZTIDSILS'];
+                  adventure['BANGKOK'] = ['NISHGAM-IN-HAPRNIA', 'TIFWALES-FERRY', 'RSTANGBE','HEATHBER','LA-STONELODGECROSSE','PIDSSKEBURY','DAMSVENS','RED-CRAGROSSE','OG','COLNEHILL','MITSBOWICH','MERECEVILLE'];
+                  adventure['NEW-YORK'] = ['CALNYONNENFIELD', 'NAZACHESTER', 'BUCKTIM','MOUNT-VILL','BRIDBOUWISPOON','DARRONDSOR','LONSMATHXBU'];
+                  adventure['PARIS'] = ['LOWTRA', 'NORTH-VENWAR', 'ULGREEN-UPON-POCKPORTH', 'BOLTRAIL-IN-ROYAMOOR','GRAND-DINYARDLODGE','NIA','WEST-MARSH','PAULTRA','PIDSSPA','MILGEE'];
+                  
+                  function ChangecityList() {
+                      var carList = document.getElementById("city");
+                      var modelList = document.getElementById("adventure");
+                      var selCar = carList.options[carList.selectedIndex].value;
+                      while (modelList.options.length) {
+                          modelList.remove(0);
+                      }
+                      var cars = adventure[selCar];
+                      if (cars) {
+                          var i;
+                          for (i = 0; i < cars.length; i++) {
+                              var car = new Option(cars[i], i);
+                              modelList.options.add(car);
+                          }
+                      }
+                  } 
+                  </script>
+                </div>
+                  <br>
+                <div class="form-group">
+                    <label>Pick a Date to visit</label>
+                    <input type="date" class="form-control" name="date" required>
+                    <hr>
+                </div>
+                <button type="submit" class="btn btn-primary" style="align-items: center;">Reserve</button>
+              </form>
+            </div>
+        </div>
+    
+    
+        <footer class="bg-light text-center text-lg-start">
+            <div class="text-center p-3" style="background-color:lightgrey">
+              © 2020 Copyright:
+              <a class="text-dark">Trip-Tourism</a>
+            </div>
+        </footer>
+    </body>
+</html>
+
+
+

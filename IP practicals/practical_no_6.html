@@ -1,0 +1,29 @@
+<script>
+const submitted = false;
+const not_submitted = false;
+
+function Assignment_Promise() {
+    return new Promise((resolve, reject) => {
+        if (not_submitted) {
+            reject({
+                name: "Missing",
+                message: "Submit asap",
+            });
+        } else if (submitted) {
+            reject({
+                name: "Turned in late ",
+                message: "Next time submit on time",
+            });
+        } else {
+            resolve("Submitted");
+        }
+    });
+}
+Assignment_Promise()
+    .then((message) => {
+        console.log("Successfully " + message);
+    })
+    .catch((error) => {
+        console.log(error.name + " " + error.message);
+    });
+</script>
